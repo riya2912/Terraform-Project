@@ -1,3 +1,4 @@
+# create VPC
 resource "aws_vpc" "my_vpc" {
   cidr_block           = var.cidr_block
   enable_dns_support   = var.enable_dns_support
@@ -7,6 +8,16 @@ resource "aws_vpc" "my_vpc" {
   }
 }
 
+# create internet gateway and attach it to VPC
+resource "aws_internet_gateway" "internet_gateway" {
+  vpc_id = aws_vpc.my_vpc.id
+  tags = {
+    Name = "Internet Gateway"
+  }
+}
+
+
+# create public subnets
 resource "aws_subnet" "public_subnet" {
   count         = length(var.availability_zones)
   vpc_id        = aws_vpc.my_vpc.id
@@ -18,6 +29,7 @@ resource "aws_subnet" "public_subnet" {
   }
 }
 
+# create private subnets
 resource "aws_subnet" "private_subnets" {
   count         = length(var.availability_zones)
   vpc_id        = aws_vpc.my_vpc.id
@@ -25,13 +37,6 @@ resource "aws_subnet" "private_subnets" {
   availability_zone = var.availability_zones[count.index]
   tags = {
     Name = "Private Subnet"
-  }
-}
-
-resource "aws_internet_gateway" "internet_gateway" {
-  vpc_id = aws_vpc.my_vpc.id
-  tags = {
-    Name = "Internet Gateway"
   }
 }
 

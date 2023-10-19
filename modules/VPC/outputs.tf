@@ -8,11 +8,14 @@ output "aws_internet_gateway" {
 }
 
 output "aws_pub_subnet" {
-  value = aws_subnet.public_subnet[*].id
+  value = aws_subnet.public_web_subnet[*].id
 }
 
-output "aws_Pri_subnet" {
-  value = aws_subnet.private_subnets[*].id
+output "aws_Pri_app_subnet" {
+  value = aws_subnet.private_app_subnets[*].id
 }
 
+output "aws_Pri_DB_subnet" {
+  value = aws_subnet.private_db_subnets[*].id
+}
 

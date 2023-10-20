@@ -16,7 +16,6 @@ resource "aws_internet_gateway" "internet_gateway" {
   }
 }
 
-
 # create public subnets for web
 resource "aws_subnet" "public_web_subnet" {
   count         = length(var.availability_zones)

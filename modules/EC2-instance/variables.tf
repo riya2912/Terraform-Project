@@ -5,3 +5,5 @@ variable "ami_id" {
 variable "instance_type" {
   description = "The instance type for the EC2 instance."
 }
+
+

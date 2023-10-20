@@ -20,3 +20,7 @@
 .terraformrc
 terraform.rc
 
+# Exclude SSH private and public keys
+id_rsa
+id_rsa.pub
+

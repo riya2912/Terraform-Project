@@ -1,0 +1,1 @@
+This Terraform project automates the provisioning of AWS infrastructure, including an Application Load Balancer (ALB), EC2 instances and security groups. It allows you to easily set up and manage an environment for your web applications.

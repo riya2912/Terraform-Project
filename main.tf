@@ -15,4 +15,13 @@ module "VPC" {
   availability_zones = var.availability_zones
   public_subnet_cidr_blocks = var.public_subnet_cidr_blocks
   private_subnet_cidr_blocks = var.private_subnet_cidr_blocks
+  private_dbsubnet_cidr_blocks = var.private_dbsubnet_cidr_blocks
+}
+
+module "RDS" {
+  source = "./modules/RDS"
+  username = var.username
+  password = var.password
+  availability_zones = var.availability_zones
+  private_dbsubnet_cidr_blocks = var.private_dbsubnet_cidr_blocks
 }

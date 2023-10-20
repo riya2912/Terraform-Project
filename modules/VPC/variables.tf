@@ -32,6 +32,10 @@ variable "private_subnet_cidr_blocks" {
   description = "CIDR blocks for private subnets"
 }
 
+variable "private_dbsubnet_cidr_blocks" {
+  type = list(string)
+}
+
 variable "enable_nat_gateway" {
   type = bool  
 }

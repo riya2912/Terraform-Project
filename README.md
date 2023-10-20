@@ -1,12 +1,14 @@
 # Highly Available Web Application Architecture on AWS with Terraform
 
 This Terraform project deploys a highly available 3-tier web application architecture on AWS, using modules for better organization. It includes Amazon EC2 instances, Auto Scaling, Elastic Load Balancing, and a Virtual Private Cloud (VPC).
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Directory Structure](#directory-structure)
 - [Configuration](#configuration)
 - [Deployment](#deployment)
+- [Cleanup](#Cleanup)
 
 ## Prerequisites
 
@@ -48,3 +50,9 @@ Before deploying, configure the `terraform.tfvars` file with your specific value
    `terraform apply`
 
 4. Confirm the deployment by typing `yes`.
+
+## Cleanup
+
+Run below command to destroy your infrastructure:
+
+   `terraform destroy`

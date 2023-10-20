@@ -24,7 +24,10 @@ The project is structured as follows:
 - `outputs.tf`: Output variables that provide information about the resources created.
 - `providers.tf`: Configuration for the AWS provider.
 - `terraform.tfvars`: Configuration values.
-- `modules/`: Submodules for VPC, ALB, Auto Scaling, Security Group.
+- `modules/`: Submodules for VPC and EC2.
+- `userdata.sh`: This file contains user data scripts that are executed when an EC2 instance is launched. User data is commonly used for initialization and configuration of instances.
+- `id_rsa.pub`: This is the public key of an SSH key pair used for securely accessing EC2 instances.
+- `.gitignore`: This file is to exclude sensitive or generated files that don't need to be version-controlled. 
 
 ## Configuration
 

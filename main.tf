@@ -32,7 +32,7 @@ module "RDS" {
 
 module "NAT-GW" {
   source = "./modules/NAT-GW"
-  cidr_block = module.VPC.aws_pub_subnet.id
+  cidr_block = module.VPC.aws_pub_subnet[0]
 }
 
 module "Security-Group" {
@@ -43,5 +43,5 @@ module "ALB" {
   source = "./modules/ALB"
   vpc_id = module.VPC.vpc_id
   instance_id = module.EC2-instance.instance_id
-  cidr_block = module.VPC.aws_Pri_app_subnet.id
+  cidr_block = module.VPC.aws_Pri_app_subnet[0]
 }

@@ -1,14 +1,11 @@
-variable "ami_id" {
-  description = "The ID of the AMI to use for EC2 instance"
-}
+variable "ami_id" {}
 
-variable "instance_type" {
-  description = "The instance type for the EC2 instance."
-}
-variable "vpc_name" {
-  description = "Name for the VPC" 
+variable "instance_type" {}
+
+variable "vpc_name" { 
   type = string
 }
+
 variable "cidr_block" {
   description = "CIDR block for VPC"
   type = string
@@ -35,7 +32,7 @@ variable "public_subnet_cidr_blocks" {
 
 variable "private_subnet_cidr_blocks" {
   type        = list(string)
-  description = "CIDR blocks for private subnets"
+  description = "CIDR blocks for application private subnets"
 }
 
 variable "private_dbsubnet_cidr_blocks" {
@@ -57,3 +54,6 @@ variable "password" {
   type = string
 }
 
+variable "region" {
+  type = string
+}

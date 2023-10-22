@@ -42,3 +42,5 @@ variable "enable_nat_gateway" {
 variable "enable_vpn_gateway" {
   type = bool
 }
+
+variable "nat_gateway_id" {}

@@ -15,7 +15,7 @@ output "aws_Pri_app_subnet" {
   value = aws_subnet.private_app_subnets[*].id
 }
 
-output "aws_Pri_DB_subnet" {
+output "aws_pri_db_subnet" {
   value = aws_subnet.private_db_subnets[*].id
 }
 

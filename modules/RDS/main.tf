@@ -15,13 +15,3 @@ resource "aws_db_subnet_group" "tf-db_subnet_group" {
   subnet_ids = var.private_dbsubnet_cidr_blocks[*]  # Replace with your subnet IDs
 }
 
-# create private subnets for database 
-resource "aws_subnet" "private_db_subnets" {
-  count         = length(var.availability_zones)
-  vpc_id        = aws_vpc.my_vpc.id
-  cidr_block    = var.private_dbsubnet_cidr_blocks[count.index]
-  availability_zone = var.availability_zones[count.index]
-  tags = {
-    Name = "Private database Subnet"
-  }
-}
